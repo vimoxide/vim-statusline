@@ -27,6 +27,8 @@ let s:right_separator = g:vem_statusline_right_separator
 
 " Build the string to show as statusline
 function! vem_statusline#render()
+    if &buftype == "terminal" | return "" | endif
+
     let active_window = winnr()
     let statusline = " "
 
